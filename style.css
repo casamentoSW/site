@@ -1,0 +1,307 @@
+/* ==========================================
+   IMPORTAÇÃO DAS FONTES PERSONALIZADAS
+============================================= */
+@font-face {
+  font-family: 'Aniyah';
+  src: url('aniyah.ttf') format('truetype'); 
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Slight';
+  src: url('slight.otf') format('truetype');
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Breathing';
+  src: url('breathing.ttf') format('truetype');
+  font-display: swap;
+}
+
+:root {
+  --fundo:        #FFFFFF; 
+  --tinta:        #1A3E59; 
+  --azul-claro:   #7DB5D6; 
+  --ouro:         #C2A578;
+  --texto:        #4A5A68;
+  --linha:        rgba(26, 62, 89, 0.15);
+
+  --font-aniyah:    "Aniyah", cursive;
+  --font-slight:    "Slight", cursive;
+  --font-breathing: "Breathing", cursive;
+  --font-montserrat: "Montserrat", sans-serif;
+
+  box-sizing: border-box;
+}
+
+*,*::before,*::after{ box-sizing: border-box; }
+
+html{ scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+
+body {
+  margin: 0; 
+  background: var(--fundo); 
+  color: var(--texto);
+  font-family: var(--font-montserrat); 
+  font-weight: 400; 
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+.sprite{ display: none; }
+
+/* SEÇÕES CONTÍNUAS */
+.secao {
+  padding: 5rem 1.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.capa {
+  padding-top: 6rem;
+  padding-bottom: 4rem;
+}
+
+.conteudo {
+  width: 100%;
+  max-width: 48rem;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+}
+
+/* TIPOGRAFIA CORRIGIDA - ANIYAH */
+
+
+
+
+
+
+/* CORREÇÃO DO ESPAÇO ENTRE OS NOMES */
+.nomes {
+  font-family: var(--font-aniyah); 
+  font-weight: normal;
+  color: var(--tinta); 
+  font-size: clamp(2.2rem, 7.5vw, 5.5rem); 
+  line-height: 1.3; 
+  margin: 0; 
+  display: flex; 
+  flex-direction: column;
+  align-items: center;
+  padding: 1rem 0;
+  gap: 1rem; /* <--- Espaço elegante entre os nomes adicionado aqui */
+}
+
+/* Garante que a capa tenha altura para a setinha ficar no rodapé */
+.capa {
+  position: relative;
+  min-height: 100vh;
+}
+
+/* ==========================================
+   AMBIENTAÇÃO (KV / IDV) - MOLDURA E VETORES
+============================================= */
+
+/* 1. Marca D'água Fixa no Fundo */
+.marca-dagua-container {
+  position: fixed;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: -1; /* Fica atrás de tudo */
+  pointer-events: none; /* Não atrapalha o clique nos botões */
+}
+.marca-dagua-container img {
+  width: 90vmin; /* Responsivo, ocupa 90% da tela */
+  max-width: 700px;
+  opacity: 0.12; /* <-- Você pode aumentar ou diminuir a transparência aqui! */
+  object-fit: contain;
+}
+
+/* 2. Moldura Fixa estilo App/Card Premium */
+.moldura-fixa {
+  position: fixed;
+  top: 1.5rem; bottom: 1.5rem;
+  left: 1.5rem; right: 1.5rem;
+  pointer-events: none;
+  z-index: 50; /* Fica acima do conteúdo, como um vidro */
+}
+
+/* Linhas da moldura */
+.linha-esq, .linha-dir, .linha-baixo, .linha-topo-esq, .linha-topo-dir {
+  position: absolute;
+  background-color: var(--azul-claro);
+  opacity: 0.6;
+}
+.linha-esq { top: 0; bottom: 0; left: 0; width: 1px; }
+.linha-dir { top: 0; bottom: 0; right: 0; width: 1px; }
+.linha-baixo { bottom: 0; left: 0; right: 0; height: 1px; }
+
+/* O corte no topo para os pilares (100px de espaço no meio) */
+.linha-topo-esq { top: 0; left: 0; width: calc(50% - 100px); height: 1px; }
+.linha-topo-dir { top: 0; right: 0; width: calc(50% - 100px); height: 1px; }
+
+/* 3. Vetor dos Pilares encaixado no corte */
+.moldura-fixa .pilares {
+  position: absolute;
+  top: 0; 
+  left: 50%;
+  transform: translate(-50%, -50%); /* Centraliza perfeitamente na linha! */
+  
+  /* Como a imagem tem 5000x5000px, deixamos a largura flexível e 
+     controlamos a altura do vetor para não ficar gigante */
+  height: 180px; 
+  width: auto;
+  object-fit: contain;
+  opacity: 0.85; /* Para combinar suavemente com a linha */
+}
+
+/* 4. Setinha de rolagem na Capa */
+.seta-scroll {
+  position: absolute;
+  bottom: 2rem;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 2.5rem;
+  height: 2.5rem;
+  color: var(--azul-claro);
+  opacity: 0.8;
+}
+
+
+
+
+
+
+
+
+/* Regra que impede as palavras de quebrarem e se sobreporem */
+.nomes span {
+  white-space: nowrap; 
+}
+
+.nomes .conector { 
+  font-family: var(--font-montserrat);
+  font-size: 1rem; 
+  color: var(--ouro); 
+  margin: 0.5rem 0;
+}
+
+.subtitulo {
+  margin: 0; font-family: var(--font-montserrat); font-size: 0.9rem;
+  text-transform: uppercase; letter-spacing: 0.25em; color: var(--texto);
+}
+
+.versiculo {
+  margin: 1rem 0; width: 100%; max-width: 38rem;
+  border-top: 1px solid var(--linha); border-bottom: 1px solid var(--linha);
+  padding: 1.5rem 0;
+}
+.versiculo p {
+  margin: 0 0 0.8rem; font-family: var(--font-montserrat);
+  font-size: 0.9rem; letter-spacing: 0.08em; line-height: 1.8; color: var(--tinta); font-style: italic;
+}
+.versiculo cite { font-style: normal; font-weight: 600; font-size: 0.75rem; letter-spacing: 0.15em; color: var(--ouro); }
+
+/* CONTAGEM */
+.contagem { display: flex; gap: clamp(1rem, 4vw, 2.5rem); margin-top: 1rem;}
+.contagem .bloco { display: flex; flex-direction: column; align-items: center; }
+.contagem b { font-size: clamp(2rem, 6vw, 3rem); color: var(--tinta); font-weight: 400; }
+.contagem i { font-size: 0.7rem; letter-spacing: 0.2em; text-transform: uppercase; margin-top: 0.2rem; }
+
+/* FAIXA CONTÍNUA COM FOTO 100% WIDTH */
+.banner-foto {
+  position: relative;
+  width: 100vw;
+  height: 50vh; /* Ocupa metade da tela */
+  min-height: 350px;
+  background-color: var(--tinta); /* Cor de fundo caso a foto falhe */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+.banner-foto img {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  object-fit: cover;
+}
+.banner-foto .overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(26, 62, 89, 0.7), rgba(26, 62, 89, 0.3));
+}
+.titulo-foto { 
+  position: relative; z-index: 2; color: #fff; text-align: center; 
+  display: flex; flex-direction: column; align-items: center; 
+}
+.titulo-foto small { 
+  font-family: var(--font-montserrat); font-size: 0.9rem; 
+  letter-spacing: 0.4em; font-weight: 500; text-transform: uppercase; 
+  margin-bottom: -0.5rem;
+}
+.titulo-foto span { 
+  font-family: var(--font-slight); 
+  font-size: clamp(3.5rem, 12vw, 6rem); /* Ajustado para caber perfeitamente */
+  line-height: 1.2; color: var(--ouro); 
+}
+
+/* CARTÕES DE DETALHES */
+.grid-cartoes {
+  width: 100%; display: grid; gap: 2rem;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+}
+.cartao {
+  display: flex; flex-direction: column; align-items: center; gap: 0.8rem;
+  padding: 2rem 1.5rem; text-decoration: none; text-align: center; color: var(--texto);
+  transition: transform 0.3s ease;
+}
+.cartao:hover { transform: translateY(-5px); }
+.cartao .icone { width: 2.5rem; height: 2.5rem; color: var(--ouro); margin-bottom: 0.5rem; }
+.cartao strong { font-weight: 600; font-size: 1rem; letter-spacing: 0.05em; color: var(--tinta); line-height: 1.4; }
+.cartao em { font-style: normal; font-size: 0.85rem; }
+.cartao .dica { 
+  font-size: 0.75rem; letter-spacing: 0.1em; text-transform: uppercase; 
+  color: var(--azul-claro); font-weight: 600; margin-top: 0.5rem; 
+  border-bottom: 1px solid currentColor; padding-bottom: 2px;
+}
+
+/* TEXTOS E ILUSTRAÇÕES */
+.script { font-family: var(--font-breathing); font-weight: normal; color: var(--tinta); font-size: clamp(3rem, 10vw, 4.5rem); margin: 0; }
+.script.principal { font-family: var(--font-aniyah); font-size: clamp(3.5rem, 12vw, 5.5rem); line-height: 1; }
+
+.etiqueta { margin: -1.5rem 0 0; font-size: 0.9rem; font-weight: 600; letter-spacing: 0.3em; text-transform: uppercase; color: var(--ouro); }
+
+.ilustracao { width: 4rem; height: 4rem; color: var(--tinta); margin: 1rem 0; }
+.ilustracao.destaque { color: var(--azul-claro); }
+
+.texto { max-width: 36rem; font-size: 1rem; line-height: 1.8; margin: 0 auto; }
+.texto p { margin-bottom: 1rem; }
+
+/* BOTÕES */
+.botao {
+  display: inline-block; border: 1px solid var(--tinta); background: var(--tinta); color: #fff;
+  font-size: 0.85rem; font-weight: 600; letter-spacing: 0.15em; text-transform: uppercase; text-decoration: none;
+  padding: 1.2rem 2.5rem; border-radius: 999px; transition: all 0.3s ease;
+}
+.botao:hover { background: var(--tinta-funda); transform: translateY(-2px); }
+.botao.vazado { background: transparent; color: var(--tinta); }
+.botao.vazado:hover { background: rgba(26, 62, 89, 0.05); }
+
+/* AMOSTRA DRESS CODE */
+.amostra { display: flex; align-items: center; justify-content: center; gap: 0.8rem; font-size: 0.8rem; font-weight: 500; letter-spacing: 0.1em; color: var(--tinta); margin-top: 1rem; }
+.amostra .cor { width: 1.8rem; height: 1.8rem; border-radius: 50%; background: var(--azul-claro); }
+
+/* RODAPÉ */
+.rodape { padding: 4rem 1.5rem; text-align: center; display: flex; flex-direction: column; align-items: center; gap: 0.5rem; }
+.rodape .monograma { font-family: var(--font-aniyah); font-size: 2.5rem; color: var(--ouro); opacity: 0.8;}
+.rodape p { margin: 0; font-size: 0.85rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--tinta); font-weight: 600;}
+
+/* ANIMAÇÕES */
+.animar-scroll { opacity: 0; transform: translateY(20px); transition: opacity 0.8s ease-out, transform 0.8s ease-out; }
+.animar-scroll.visivel { opacity: 1; transform: translateY(0); }
