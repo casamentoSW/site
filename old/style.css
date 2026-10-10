@@ -1,0 +1,239 @@
+/* ==========================================
+   IMPORTAÇÃO DAS FONTES PERSONALIZADAS
+============================================= */
+@font-face {
+  font-family: 'Aniyah';
+  src: url('fonts/aniyah.ttf') format('truetype'); 
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Slight';
+  src: url('fonts/slight.otf') format('opentype');
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Breathing';
+  src: url('fonts/breathing.ttf') format('truetype');
+  font-display: swap;
+}
+
+:root {
+  --fundo:        #FFFFFF; 
+  --tinta:        #1A3E59; 
+  --azul-claro:   #74B4D4; 
+  --ouro:         #C2A578;
+  --texto:        #4A5A68;
+  --linha:        rgba(116, 180, 212, 0.5); 
+
+  --font-aniyah:    "Aniyah", cursive;
+  --font-slight:    "Slight", cursive;
+  --font-breathing: "Breathing", cursive;
+  --font-montserrat: "Montserrat", sans-serif;
+
+  box-sizing: border-box;
+}
+
+*,*::before,*::after{ box-sizing: border-box; }
+
+/* Scroll 100% livre e destravado */
+html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+
+body {
+  margin: 0; background: var(--fundo); color: var(--texto);
+  font-family: var(--font-montserrat); font-weight: 400; line-height: 1.6;
+  overflow-x: hidden; position: relative; width: 100%;
+}
+
+/* ==========================================
+   AMBIENTAÇÃO E MOLDURA DA PÁGINA INTEIRA
+============================================= */
+.marca-dagua-container {
+  position: fixed; inset: 0; display: flex;
+  align-items: center; justify-content: center; z-index: -1; pointer-events: none;
+}
+.marca-dagua-container img { width: 90vmin; max-width: 800px; opacity: 0.08; object-fit: contain; }
+
+.moldura-pagina {
+  position: absolute; top: 5rem; bottom: 1.5rem; left: 2rem; right: 2rem;
+  border: 1px solid var(--linha); border-radius: 20px; pointer-events: none; z-index: 50; 
+}
+
+.fundo-pilares {
+  position: absolute; top: 0; left: 50%; transform: translate(-50%, -50%);
+  background-color: var(--fundo); padding: 0 1.5rem; display: flex; justify-content: center; align-items: center;
+}
+.fundo-pilares .pilares { height: 120px; width: auto; object-fit: contain; opacity: 0.9; }
+
+/* ==========================================
+   SECÇÕES E ESTRUTURA GERAL
+============================================= */
+main { position: relative; z-index: 2; }
+.secao { padding: 5rem 2rem; display: flex; justify-content: center; align-items: center; width: 100%; }
+.capa { padding-top: 11rem; min-height: 100vh; position: relative; }
+.conteudo { width: 100%; max-width: 56rem; text-align: center; display: flex; flex-direction: column; align-items: center; gap: clamp(1.5rem, 4vw, 2.5rem); padding: 0 1rem; }
+
+/* TEXTOS CAPA - Com respiro lateral garantido para não tocar na moldura */
+.nomes {
+  font-family: var(--font-aniyah); font-weight: normal; color: var(--tinta); 
+  font-size: clamp(2rem, 5.5vw, 4.5rem); line-height: 1; margin: 0; display: flex; flex-direction: column; align-items: center; gap: 1.5rem; 
+}
+.nomes span { white-space: nowrap; padding: 0 0.3em; }
+.nomes .conector { font-family: var(--font-montserrat); font-size: 1rem; color: var(--azul-claro); margin: 0; }
+
+.subtitulo { margin: 0; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.25em; color: var(--texto); }
+.versiculo { margin: 1.5rem 0; max-width: 38rem; padding: 1.5rem 0; border-top: 1px solid var(--linha); border-bottom: 1px solid var(--linha); }
+.versiculo p { margin: 0 0 0.8rem; font-size: 0.85rem; letter-spacing: 0.1em; line-height: 1.8; color: var(--azul-claro); font-style: italic; }
+.versiculo cite { font-style: normal; font-weight: 600; font-size: 0.75rem; letter-spacing: 0.15em; color: var(--tinta); }
+
+.contagem { display: flex; gap: clamp(1.5rem, 5vw, 3rem); margin-top: 1rem;}
+.contagem .bloco { display: flex; flex-direction: column; align-items: center; }
+.contagem b { font-size: clamp(1.8rem, 5vw, 2.5rem); color: var(--azul-claro); font-weight: 400; line-height: 1.2; }
+.contagem i { font-size: 0.7rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--tinta); margin-top: 0.2rem; }
+
+.seta-scroll { position: absolute; bottom: 3rem; left: 50%; transform: translateX(-50%); width: 2rem; height: 2rem; color: var(--azul-claro); opacity: 0.6; }
+
+/* ==========================================
+   SAVE THE DATE & CONTAGEM 
+============================================= */
+.save-the-date-section { padding-top: 2rem; padding-bottom: 6rem; }
+
+.std-card {
+  display: flex; width: 100%; max-width: 950px; background-color: #ccf1fc; 
+  border-radius: 12px; overflow: hidden; box-shadow: 0 15px 40px rgba(26, 62, 89, 0.08); border: 1px solid var(--linha);
+}
+
+.std-foto { flex: 1.05; min-height: 500px; }
+.std-foto img { width: 100%; height: 100%; object-fit: cover; object-position: center; }
+
+.std-info { flex: 1; display: flex; flex-direction: column; align-items: center; padding: 4.5rem 2rem 2.5rem 2rem; text-align: center; }
+
+.std-data-destaque { display: flex; flex-direction: column; align-items: center; width: 100%; margin-top: auto; margin-bottom: 3.5rem; }
+.std-dia { font-family: var(--font-aniyah); font-size: clamp(6.5rem, 11vw, 9.5rem); line-height: 0.6; color: var(--tinta); font-weight: normal; }
+.std-mes { font-family: var(--font-aniyah); font-size: clamp(1.8rem, 3.5vw, 2.8rem); line-height: 0.8; color: var(--tinta); font-weight: normal; margin-top: -0.2rem; white-space: nowrap; z-index: 2; margin-left: 2rem; }
+
+.std-contagem { margin-top: 0; gap: clamp(1rem, 2vw, 2rem); }
+.std-contagem b { color: var(--tinta); font-size: clamp(1.8rem, 3vw, 2.2rem); font-family: var(--font-montserrat); font-weight: 500; }
+.std-contagem i { color: var(--texto); font-family: var(--font-montserrat); font-weight: 500; font-size: 0.65rem; }
+
+.std-titulo { font-family: var(--font-montserrat); font-size: 1rem; font-weight: 500; letter-spacing: 0.4em; text-transform: uppercase; display: flex; align-items: center; justify-content: center; gap: 0.5rem; color: var(--tinta); margin-top: auto; padding-top: 2rem; }
+.std-the { font-family: var(--font-slight); font-size: 3rem; color: var(--ouro); text-transform: lowercase; line-height: 0.4; margin-top: -0.8rem; }
+
+/* ==========================================
+   BANNER FOTO - GRUPO PERFEITO E ENCAIXADO NA BORDA
+============================================= */
+.banner-foto {
+  position: relative; width: calc(100% - 4rem); margin: 0 auto; border-radius: 0%;
+  height: 55vh; min-height: 400px; background-color: var(--tinta); 
+  display: flex; align-items: flex-end; justify-content: center; 
+  padding-bottom: clamp(2rem, 5vw, 3rem); overflow: hidden;
+}
+.banner-foto img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center 25%; z-index: 0; }
+.banner-foto .overlay-azul { position: absolute; inset: 0; background: var(--azul-claro); mix-blend-mode: multiply; opacity: 0.85; z-index: 1; }
+
+.titulo-foto { 
+  position: relative; z-index: 2; color: #fff; text-align: center; 
+  display: flex; flex-direction: column; align-items: center; margin: 0; 
+  width: 100%;
+  /* Raiz elástica ajustada para permitir maior redução no mobile sem cortes */
+  font-size: clamp(3px, 1.4vw, 16px);
+}
+
+.titulo-foto small { 
+  font-size: 1.2em; 
+  letter-spacing: 0.4em; font-weight: 500; text-transform: uppercase; 
+  margin-bottom: 0.6em; padding-left: 0.4em; 
+}
+
+.titulo-foto span { 
+  font-family: var(--font-slight); 
+  font-size: 8em; 
+  line-height: 0.8; color: #fff; white-space: nowrap; margin-bottom: -0.1em;
+  padding: 0 0.4em; /* Impede o corte das pontas das letras */
+}
+
+/* ==========================================
+   GRIDS - DETALHES E PRESENTES
+============================================= */
+.grid-tres-colunas { display: grid; grid-template-columns: repeat(3, 1fr); gap: 3rem; width: 100%; align-items: start; }
+.grid-duas-colunas { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; width: 100%; align-items: start; }
+
+.cartao { display: flex; flex-direction: column; align-items: center; gap: 1rem; text-align: center; }
+.icone-esboco { height: 90px; width: auto; object-fit: contain; margin-bottom: 0.5rem; opacity: 0.9; }
+.cartao strong { font-weight: 600; font-size: 0.95rem; letter-spacing: 0.1em; color: var(--tinta); text-transform: uppercase; line-height: 1.5; }
+.cartao em { font-style: normal; font-size: 0.85rem; color: var(--texto); }
+
+.botao-pequeno { font-size: 0.7rem; font-weight: 600; letter-spacing: 0.15em; text-transform: uppercase; color: var(--fundo); background-color: var(--azul-claro); text-decoration: none; padding: 0.6rem 1.2rem; border-radius: 999px; margin-top: 0.5rem; transition: 0.3s; }
+.botao-pequeno:hover { background-color: var(--tinta); }
+
+/* ==========================================
+   PRESENTES E CONFIRMAÇÃO
+============================================= */
+.bloco-duplo { display: flex; flex-direction: column; align-items: center; gap: 1.5rem; }
+.icone-ilustracao { width: 160px; height: auto; object-fit: contain; }
+
+.script { font-family: var(--font-breathing); font-weight: normal; color: var(--tinta); font-size: clamp(2.5rem, 8vw, 4.5rem); margin: 0; line-height: 1; }
+.script.principal { font-family: var(--font-aniyah); font-size: clamp(3.2rem, 10vw, 5.5rem); line-height: 1; }
+
+.etiqueta { margin: -1.5rem 0 2rem; font-size: 0.9rem; font-weight: 600; letter-spacing: 0.3em; text-transform: uppercase; color: var(--tinta); }
+.texto { max-width: 36rem; font-size: 0.95rem; line-height: 1.8; margin: 0 auto; color: var(--texto); }
+.texto p { margin-bottom: 1rem; }
+
+.acoes-duplas { margin-top: 3rem; }
+.botao { display: inline-block; border: 1px solid var(--azul-claro); background: var(--azul-claro); color: #fff; font-size: 0.85rem; font-weight: 600; letter-spacing: 0.15em; text-transform: uppercase; text-decoration: none; padding: 1.2rem 3rem; border-radius: 999px; transition: all 0.3s ease; }
+.botao:hover { background: var(--tinta); border-color: var(--tinta); transform: translateY(-2px); }
+.botao.vazado { background: transparent; color: var(--azul-claro); }
+.botao.vazado:hover { background: var(--azul-claro); color: var(--fundo); }
+
+.amostra { display: flex; align-items: center; justify-content: center; gap: 0.8rem; font-size: 0.75rem; letter-spacing: 0.1em; color: var(--texto); margin-top: 1rem; }
+.amostra .cor { width: 1.5rem; height: 1.5rem; border-radius: 50%; background: var(--azul-claro); }
+
+/* ==========================================
+   FOTO FINAL E FECHAMENTO
+============================================= */
+.foto-final-container { padding-bottom: 8rem; }
+.moldura-foto-rodape { width: 100%; max-width: 450px; border-radius: 12px; overflow: hidden; box-shadow: 0 10px 40px rgba(0,0,0,0.08); aspect-ratio: 4/5; }
+.moldura-foto-rodape img { width: 100%; height: 100%; object-fit: cover; object-position: center center; }
+
+.animar-scroll { opacity: 0; transform: translateY(20px); transition: opacity 0.8s ease-out, transform 0.8s ease-out; }
+.animar-scroll.visivel { opacity: 1; transform: translateY(0); }
+.animar-flutuar { animation: flutuar 2.5s infinite ease-in-out; }
+@keyframes flutuar { 0% { transform: translate(-50%, 0); } 50% { transform: translate(-50%, 8px); } 100% { transform: translate(-50%, 0); } }
+
+/* ==========================================
+   A MÁGICA DA RESPONSIVIDADE (MOBILE SEGURO)
+============================================= */
+@media (max-width: 900px) {
+  .moldura-pagina { top: 4.5rem; bottom: 1rem; left: 1rem; right: 1rem; }
+  .fundo-pilares .pilares { height: 80px; }
+  
+  .secao { padding: 3.5rem 1rem; }
+  .capa { padding-top: 9rem; }
+  
+  /* Nomes com escala estrita para garantir respiro lateral em telemóveis estreitos */
+  .nomes { font-size: clamp(1.1rem, 6.5vw, 1.8rem); gap: 0.8rem; }
+  .nomes .conector { font-size: 0.8rem; }
+
+  /* Banner alinhado exatamente à moldura mobile (1rem de margem de cada lado) */
+  .banner-foto { 
+    width: calc(100% - 2rem); height: 45vh; min-height: 350px; 
+    padding-bottom: 1.5rem; 
+  }
+  
+  .std-card { flex-direction: column; }
+  .std-foto { min-height: 400px; }
+  .std-info { padding: 4rem 1.5rem; }
+  
+  .std-data-destaque { margin-bottom: 2.5rem; }
+  .std-dia { font-size: 6.5rem; line-height: 0.6; }
+  .std-mes { font-size: 2rem; margin-top: -0.2rem; margin-left: 1rem; }
+  
+  .std-contagem b { font-size: 1.8rem; }
+  .std-titulo { font-size: 0.9rem; padding-top: 3rem; }
+  .std-the { font-size: 2.8rem; margin-top: -0.6rem; }
+  
+  .grid-tres-colunas { grid-template-columns: 1fr; gap: 3.5rem; }
+  .grid-duas-colunas { grid-template-columns: 1fr; gap: 4rem; }
+  
+  .icone-ilustracao { width: 120px; }
+  .foto-final-container { padding-bottom: 5rem; }
+}

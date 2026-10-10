@@ -13,130 +13,145 @@
 </head>
 <body>
 
-<!-- Ícones Minimalistas e Corrigidos -->
-<svg class="sprite" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg">
-  <symbol id="i-calendario" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2" ry="2" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><line x1="16" y1="2" x2="16" y2="6" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><line x1="8" y1="2" x2="8" y2="6" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><line x1="3" y1="10" x2="21" y2="10" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></symbol>
-  
-  <symbol id="i-relogio" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><polyline points="12 6 12 12 16 14" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></symbol>
-  
-  <symbol id="i-mapa" viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><circle cx="12" cy="10" r="3" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></symbol>
-  
-  <symbol id="i-presente" viewBox="0 0 24 24"><polyline points="20 12 20 22 4 22 4 12" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><rect x="2" y="7" width="20" height="5" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><line x1="12" y1="22" x2="12" y2="7" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M12 7H7.5a2.5 2.5 0 0 1 0-5C11 2 12 7 12 7z" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M12 7h4.5a2.5 2.5 0 0 0 0-5C13 2 12 7 12 7z" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></symbol>
-  
-  <symbol id="i-check" viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><polyline points="22 4 12 14.01 9 11.01" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></symbol>
-  
-  <symbol id="i-traje" viewBox="0 0 24 24"><path d="M20.38 3.46L16 2a8 8 0 0 0-8 0L3.62 3.46a2 2 0 0 0-1.34 2.23l.58 3.47a1 1 0 0 0 .99.84H6v10c0 1.1.9 2 2 2h8a2 2 0 0 0 2-2V10h2.15a1 1 0 0 0 .99-.84l.58-3.47a2 2 0 0 0-1.34-2.23z" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></symbol>
-</svg>
-
-
-
 <!-- ============ AMBIENTAÇÃO: MARCA D'ÁGUA ============ -->
 <div class="marca-dagua-container">
-  <img src="img_marca-dagua.png" alt="" aria-hidden="true">
+  <img src="img/img_marca-dagua.svg" alt="" aria-hidden="true">
 </div>
 
-<!-- ============ AMBIENTAÇÃO: MOLDURA E PILARES ============ -->
-<div class="moldura-fixa" aria-hidden="true">
-  <div class="linha-esq"></div>
-  <div class="linha-dir"></div>
-  <div class="linha-baixo"></div>
-  <div class="linha-topo-esq"></div>
-  <div class="linha-topo-dir"></div>
-  <img src="img_pilares.png" class="pilares" alt="">
+<!-- ============ AMBIENTAÇÃO: MOLDURA DA PÁGINA INTEIRA ============ -->
+<div class="moldura-pagina" aria-hidden="true">
+  <a href="https://share.google/iuevnRoDJtommTUuw" target="_blank" class="fundo-pilares" aria-label="Ver Localização no Mapa">
+    <img src="img/img_pilares.svg" class="pilares" alt="">
+  </a>
 </div>
-
-
-
 
 <main>
+  <!-- ============ CAPA ============ -->
+  <section class="secao capa" id="capa">
+    <div class="conteudo">
+      <h1 class="nomes animar-scroll">
+        <span>Sara Leite e</span>
+        <span><br>Wilson Leite Jr</span>
+      </h1>
 
+      <p class="subtitulo animar-scroll"><br>convidam para a cerimônia<br>do seu casamento</p>
 
-<!-- ============ CAPA ============ -->
-<section class="secao capa" id="capa">
-  <div class="conteudo">
-    <h1 class="nomes animar-scroll">
-      <span>Sara Leite e</span>
-      <span>Wilson Leite Jr</span>
-    </h1>
-
-    <p class="subtitulo animar-scroll">convidam para a cerimônia<br>do seu casamento</p>
-
-    <blockquote class="versiculo animar-scroll">
-      <p>“PORTANTO DEIXARÁ O HOMEM O SEU PAI E SUA MÃE, E APEGAR-SE-À A TUA MULHER, E SERÃO AMBOS UMA CARNE”</p>
-      <cite>GÊNESIS 2:24</cite>
-    </blockquote>
-
-    <div class="contagem animar-scroll" id="contagem">
-      <div class="bloco"><b data-contagem="dias">--</b><i>dias</i></div>
-      <div class="bloco"><b data-contagem="horas">--</b><i>horas</i></div>
-      <div class="bloco"><b data-contagem="minutos">--</b><i>min</i></div>
-      <div class="bloco"><b data-contagem="segundos">--</b><i>seg</i></div>
+      <blockquote class="versiculo animar-scroll">
+        <p>“PORTANTO DEIXARÁ O HOMEM O SEU PAI E SUA MÃE, E APEGAR-SE-À A TUA MULHER, E SERÃO AMBOS UMA CARNE”</p>
+        <cite>GÊNESIS 2:24</cite>
+      </blockquote>
     </div>
-  </div>
-  
-  <!-- Seta rolar para baixo -->
-  <a href="#dia" class="seta-scroll animar-flutuar" aria-label="Rolar para baixo">
-    <svg viewBox="0 0 24 24"><path d="M6 9l6 6 6-6" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-  </a>
-</section>
+    
+    <a href="#save-the-date" class="seta-scroll animar-flutuar" aria-label="Rolar para baixo">
+      <svg viewBox="0 0 24 24"><path d="M6 9l6 6 6-6" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </a>
+  </section>
+
+  <!-- ============ CONTAGEM REGRESSIVA (EX-SAVE THE DATE) ============ -->
+  <section class="secao save-the-date-section" id="save-the-date">
+    <div class="conteudo">
+      <a href="#" id="btn-calendario" class="std-card animar-scroll" title="Clique para adicionar ao seu calendário">
+        <div class="std-foto">
+          <img src="img/foto-rodape2.jpg" alt="Sara e Wilson">
+        </div>
+        
+        <div class="std-info">
+          <div class="std-data-destaque">
+            <span class="std-dia"><br>19</span>
+            <span class="std-mes"><br>de dezembro</span>
+          </div>
+          
+
+          <!-- O NOVO TÍTULO AQUI -->
+          <div class="std-titulo">O Grande Dia se Aproxima</div>
 
 
+          <div class="contagem std-contagem" id="contagem">
+            <div class="bloco"><b data-contagem="dias">--</b><i>dias</i></div>
+            <div class="bloco"><b data-contagem="horas">--</b><i>horas</i></div>
+            <div class="bloco"><b data-contagem="minutos">--</b><i>min</i></div>
+            <div class="bloco"><b data-contagem="segundos">--</b><i>seg</i></div>
+          </div>
 
+
+          
+          <span class="dica-clique">Toque para salvar no calendário 📅</span>
+        </div>
+      </a>
+    </div>
+  </section>
 
   <!-- ============ FAIXA CONTÍNUA COM FOTO ============ -->
   <section class="banner-foto animar-scroll">
-    <!-- Certifique-se de que a imagem 'capa.jpg' existe na mesma pasta -->
-    <img src="capa.jpg" alt="Sara e Wilson" onerror="this.style.display='none'">
-    <div class="overlay"></div>
+    <img src="img/capa.jpg" alt="Sara e Wilson" onerror="this.style.display='none'">
+    <div class="overlay-azul"></div>
     <h2 class="titulo-foto">
       <small>Dia do</small>
       <span>Casamento</span>
     </h2>
   </section>
 
-  <!-- ============ DETALHES DO DIA ============ -->
+  <!-- ============ ROTEIRO (NOVA TIMELINE EDITORIAL) ============ -->
   <section class="secao detalhes" id="dia">
     <div class="conteudo">
-      <div class="grid-cartoes">
-        <a class="cartao animar-scroll" href="https://www.casar.com/" target="_blank">
-          <svg class="icone"><use href="#i-calendario"></use></svg>
-          <strong>19 de dezembro<br>de 2026</strong>
-          <em>sábado</em>
-          <span class="dica">Salvar a data</span>
+      
+      <div class="timeline-card animar-scroll">
+        
+        <div class="timeline-item">
+          <img src="img/icone-ampulheta.svg" class="icone-timeline" alt="Data">
+          <div class="timeline-text">
+            <strong>19 de dezembro de 2026</strong>
+            <em>Sábado</em>
+          </div>
+        </div>
+
+        <div class="timeline-item">
+          <img src="img/icone-relogio.svg" class="icone-timeline" alt="Horário">
+          <div class="timeline-text">
+            <strong>Pontualmente às 15h30 da tarde</strong>
+            <em>(Faremos a cerimônia no pôr do sol)</em>
+          </div>
+        </div>
+
+        <a href="https://share.google/PHyMxCWy5XIv5hsVc" target="_blank" class="timeline-item timeline-link">
+          <img src="img/icone-pilares.svg" class="icone-timeline" alt="Local">
+          <div class="timeline-text">
+            <strong>Kyalami — Wake Park</strong>
+            <em>à 1 hora de Cuiabá <br> (Toque aqui para abrir o mapa)</em>
+          </div>
         </a>
-        <a class="cartao animar-scroll" href="https://www.casar.com/" target="_blank">
-          <svg class="icone"><use href="#i-relogio"></use></svg>
-          <strong>Pontualmente<br>às 15h30</strong>
-          <em>(pôr do sol)</em>
-          <span class="dica">Ver programação</span>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ============ PRESENTES E CONFIRMAÇÃO (NOVOS CARTÕES UX) ============ -->
+  <section class="secao presentes-secao" id="presentes-confirmacao">
+    <div class="conteudo animar-scroll">
+      
+      <div class="texto-intro-presentes">
+        <p>Sua presença é o nosso maior presente. Mas, se desejar nos abençoar com uma lembrança, preparamos nossa lista com muito carinho.</p>
+      </div>
+
+      <div class="grid-cards-acao">
+        <a href="https://noivos.casar.com/wilsonesara#/rsvp" target="_blank" class="card-acao">
+          <div class="card-acao-icone"><img src="img/icone-check.svg" alt="Confirmar Presença"></div>
+          <div class="card-acao-texto">
+            <h3>Confirmar Presença</h3>
+            <span>Acessar o formulário ➔</span>
+          </div>
         </a>
-        <a class="cartao animar-scroll" href="https://share.google/iuevnRoDJtommTUuw" target="_blank">
-          <svg class="icone"><use href="#i-mapa"></use></svg>
-          <strong>Kyalami — Wake Park</strong>
-          <em>à 1 hora de Cuiabá</em>
-          <span class="dica">Localização</span>
+
+        <a href="https://noivos.casar.com/wilsonesara#/presentes" target="_blank" class="card-acao destaque">
+          <div class="card-acao-icone"><img src="img/icone-presentes.svg" alt="Presentes"></div>
+          <div class="card-acao-texto">
+            <h3>Lista de Presentes</h3>
+            <span>Ver opções ➔</span>
+          </div>
         </a>
       </div>
-    </div>
-  </section>
 
-  <!-- ============ PRESENTES ============ -->
-  <section class="secao" id="presentes">
-    <div class="conteudo animar-scroll">
-      <h2 class="script">Lista de Presentes</h2>
-      <svg class="ilustracao"><use href="#i-presente"></use></svg>
-      <p class="texto">A presença de vocês já é o maior presente. Para quem quiser nos ajudar a montar o nosso lar, preparamos uma lista.</p>
-      <a class="botao vazado" href="https://www.casar.com/" target="_blank">Ver lista de presentes</a>
-    </div>
-  </section>
-
-  <!-- ============ CONFIRMAÇÃO ============ -->
-  <section class="secao" id="confirmacao">
-    <div class="conteudo animar-scroll">
-      <h2 class="script">Confirmação</h2>
-      <svg class="ilustracao destaque"><use href="#i-check"></use></svg>
-      <p class="texto">Para organizarmos tudo com carinho, confirme sua presença antecipadamente.</p>
-      <a class="botao" href="https://www.casar.com/" target="_blank">Confirmar presença</a>
     </div>
   </section>
 
@@ -145,7 +160,7 @@
     <div class="conteudo animar-scroll">
       <h2 class="script principal">Dress Code</h2>
       <p class="etiqueta">Traje Social</p>
-      <svg class="ilustracao"><use href="#i-traje"></use></svg>
+      <img src="img/icone-trajes.svg" class="icone-ilustracao" alt="Trajes">
 
       <div class="texto">
         <p>Venham bem vestidos e escolham seu melhor look para celebrar esse dia tão especial conosco.</p>
@@ -156,12 +171,22 @@
     </div>
   </section>
 
-  <!-- ============ RODAPÉ ============ -->
-  <footer class="rodape animar-scroll">
-    <span class="monograma">SW</span>
-    <p><b>Sara &amp; Wilson</b> · 19.12.2026</p>
-  </footer>
+  <!-- ============ FOTO FINAL RODAPÉ ============ -->
+  <section class="secao foto-final-container animar-scroll">
+    <div class="moldura-foto-rodape">
+      <img src="img/foto-rodape.jpg" alt="Sara e Wilson" onerror="this.style.display='none'">
+    </div>
+  </section>
+
 </main>
+
+<!-- ============ BARRA DE AÇÃO FLUTUANTE EM PÍLULA (MOBILE) ============ -->
+<nav class="barra-flutuante" aria-label="Ações rápidas">
+  <div class="barra-conteudo">
+    <a href="https://noivos.casar.com/wilsonesara#/rsvp" target="_blank" class="btn-flutuante">Confirmar</a>
+    <a href="https://noivos.casar.com/wilsonesara#/presentes" target="_blank" class="btn-flutuante ouro">Presentes</a>
+  </div>
+</nav>
 
 <script src="script.js"></script>
 </body>
