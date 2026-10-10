@@ -1,9 +1,9 @@
 /* ==========================================
    IMPORTAÇÃO DAS FONTES PERSONALIZADAS
 ============================================= */
-@font-face { font-family: 'Aniyah'; src: url('fonts/aniyah.ttf') format('truetype'); font-display: swap; }
-@font-face { font-family: 'Slight'; src: url('fonts/slight.otf') format('opentype'); font-display: swap; }
-@font-face { font-family: 'Breathing'; src: url('fonts/breathing.ttf') format('truetype'); font-display: swap; }
+@font-face { font-family: 'Aniyah'; src: url('fonts/aniyah.ttf') format('truetype'); font-display: block; }
+@font-face { font-family: 'Slight'; src: url('fonts/slight.otf') format('opentype'); font-display: block; }
+@font-face { font-family: 'Breathing'; src: url('fonts/breathing.ttf') format('truetype'); font-display: block; }
 
 :root {
   --fundo:        #FFFFFF; 
