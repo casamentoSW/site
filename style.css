@@ -38,18 +38,25 @@ body {
   transition: opacity 1.2s ease-in-out, visibility 1.2s;
 }
 
-/* O Efeito "Cartoon Network" de Respiração Suave */
+/* O Efeito de Respiração Suave (Agora Responsivo e Blindado) */
 .selo-respirando {
   font-family: var(--font-slight);
-  font-size: 5rem;
+  /* Escala reduzida: mínimo de 2.2rem, adaptável, máximo de 4.5rem. Os traços cabem perfeitamente. */
+  font-size: clamp(2.2rem, 10vw, 4.5rem); 
   color: var(--tinta);
+  white-space: nowrap; 
+  opacity: 0; /* COMEÇA INVISÍVEL: Impede o navegador de mostrar a fonte feia no 4G lento */
+}
+
+/* O JS vai injetar esta classe quando a fonte estiver 100% pronta */
+.fonte-pronta .selo-respirando {
   animation: respirar 2.5s infinite ease-in-out;
 }
 
 @keyframes respirar {
-  0%   { opacity: 0.2; transform: scale(0.95); }
-  50%  { opacity: 1;   transform: scale(1.05); }
-  100% { opacity: 0.2; transform: scale(0.95); }
+  0%   { opacity: 0; transform: scale(0.95); }
+  50%  { opacity: 1; transform: scale(1.05); }
+  100% { opacity: 0; transform: scale(0.95); }
 }
 
 .carregado #preloader {

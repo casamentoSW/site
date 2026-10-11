@@ -2,12 +2,14 @@
    CONTROLO DA TELA DE CARREGAMENTO (BLINDADO)
 ============================================= */
 window.addEventListener('load', () => {
-  // O site só revela a "obra" quando TODAS as fontes e imagens estiverem 100% carregadas
   document.fonts.ready.then(() => {
-    // Adiciona um pequeno atraso de 0.5s só para o utilizador apreciar o selo a respirar
+    // 1. A fonte luxuosa chegou! Inicia a animação de respirar.
+    document.body.classList.add('fonte-pronta');
+    
+    // 2. Aguarda 2 segundos para o convidado apreciar o monograma, e depois revela o site.
     setTimeout(() => {
       document.body.classList.add('carregado');
-    }, 500);
+    }, 2000);
   });
 });
 
