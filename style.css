@@ -31,6 +31,33 @@ body {
   overflow-x: hidden; position: relative; width: 100%;
 }
 
+/* TELA DE CARREGAMENTO (PRELOADER LUXO) */
+#preloader {
+  position: fixed; inset: 0; background: var(--fundo); z-index: 9999;
+  display: flex; justify-content: center; align-items: center;
+  transition: opacity 1.2s ease-in-out, visibility 1.2s;
+}
+
+/* O Efeito "Cartoon Network" de Respiração Suave */
+.selo-respirando {
+  font-family: var(--font-slight);
+  font-size: 5rem;
+  color: var(--tinta);
+  animation: respirar 2.5s infinite ease-in-out;
+}
+
+@keyframes respirar {
+  0%   { opacity: 0.2; transform: scale(0.95); }
+  50%  { opacity: 1;   transform: scale(1.05); }
+  100% { opacity: 0.2; transform: scale(0.95); }
+}
+
+.carregado #preloader {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+
 /* ==========================================
    AMBIENTAÇÃO E MOLDURA
 ============================================= */
@@ -60,7 +87,17 @@ main { position: relative; z-index: 2; }
 .capa { padding-top: 11rem; min-height: 100vh; position: relative; }
 .conteudo { width: 100%; max-width: 56rem; text-align: center; display: flex; flex-direction: column; align-items: center; gap: clamp(1.5rem, 4vw, 2.5rem); padding: 0 1rem; }
 
-.nomes { font-family: var(--font-aniyah); font-weight: normal; color: var(--tinta); font-size: clamp(2rem, 5.5vw, 4.5rem); line-height: 1; margin: 0; display: flex; flex-direction: column; align-items: center; gap: 1.5rem; }
+.nomes { 
+  font-family: var(--font-slight); /* <-- A mágica da troca de fonte está aqui */
+  font-weight: normal; 
+  color: var(--tinta); 
+  font-size: clamp(3rem, 7vw, 6rem); /* Ajustado para a Slight ficar imponente */
+  line-height: 1; 
+  margin: 0; 
+  display: flex; 
+  flex-direction: column; 
+  align-items: center; 
+  gap: 1.5rem;}
 .nomes span { white-space: nowrap; padding: 0 0.3em; }
 
 .subtitulo { margin: 0; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.25em; color: var(--texto); }
@@ -176,9 +213,10 @@ main { position: relative; z-index: 2; }
 /* PROIBIÇÃO DO "DRESS CODE" QUEBRAR DE LINHA E ESCALA AJUSTADA */
 .script.principal { 
   font-family: var(--font-aniyah); 
-  font-size: clamp(2.8rem, 10vw, 5.5rem); 
+  font-size: clamp(2.2rem, 6vw, 5.5rem); 
   line-height: 1; 
   white-space: nowrap; /* Impede a palavra "Code" de cair */
+  text-align: center;
 }
 
 .etiqueta { margin: -1.5rem 0 2rem; font-size: clamp(0.7rem, 2vw, 0.9rem); font-weight: 600; letter-spacing: 0.3em; text-transform: uppercase; color: var(--tinta); }
