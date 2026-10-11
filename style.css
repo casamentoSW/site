@@ -105,7 +105,7 @@ main { position: relative; z-index: 2; }
   flex-direction: column; 
   align-items: center; 
   gap: 1.5rem;}
-.nomes span { white-space: nowrap; padding: 0 0.3em; }
+.nomes span { white-space: nowrap; padding: 0 0.6em; }
 
 .subtitulo { margin: 0; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.25em; color: var(--texto); }
 .versiculo { margin: 1.5rem 0; max-width: 38rem; padding: 1.5rem 0; border-top: 1px solid var(--linha); border-bottom: 1px solid var(--linha); }
@@ -163,7 +163,9 @@ main { position: relative; z-index: 2; }
 
 .titulo-foto { position: relative; z-index: 2; color: #fff; text-align: center; display: flex; flex-direction: column; align-items: center; margin: 0; width: 100%; font-size: clamp(3px, 1.4vw, 16px); }
 .titulo-foto small { font-size: 1.2em; letter-spacing: 0.4em; font-weight: 500; text-transform: uppercase; margin-bottom: 0.6em; padding-left: 0.4em; }
-.titulo-foto span { font-family: var(--font-slight); font-size: 8em; line-height: 0.8; color: #fff; white-space: nowrap; margin-bottom: -0.1em; padding: 0 0.4em; }
+.titulo-foto span { font-family: var(--font-slight); font-size: 8em; line-height: 0.8; color: #fff; white-space: nowrap; margin-bottom: -0.1em; padding: 0 0.8em; }
+
+
 
 /* ==========================================
    A NOVA TIMELINE EDITORIAL E ÍCONES (FUNDO BRANCO CORRIGIDO)
@@ -273,12 +275,12 @@ main { position: relative; z-index: 2; }
   .secao { padding: 3.5rem 1rem; }
   .capa { padding-top: 9rem; }
   
-  .nomes { font-size: clamp(1.1rem, 6.5vw, 1.8rem); gap: 0.8rem; }
+  .nomes { font-size: clamp(1rem, 5.5vw, 1.6rem); gap: 0.8rem; }
   .nomes .conector { font-size: 0.8rem; }
 
   /* Ajuste seguro para a palavra Casamento não vazar de todo */
   .banner-foto { width: calc(100% - 2rem); height: 45vh; min-height: 350px; padding-bottom: 1.5rem; }
-  .titulo-foto { font-size: clamp(2px, 1.8vw, 10px); }
+  .titulo-foto { font-size: clamp(2px, 1.5vw, 10px); }
 
   .std-card { flex-direction: column; }
   .std-foto { min-height: 400px; }
