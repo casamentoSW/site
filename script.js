@@ -1,16 +1,18 @@
 /* ==========================================
-   CONTROLO DA TELA DE CARREGAMENTO (BLINDADO)
+   CONTROLO DA TELA DE CARREGAMENTO (ALTA PERFORMANCE)
 ============================================= */
+
+// 1. APARIÇÃO IMEDIATA: Assim que a fonte "Slight" é lida, mostra o selo (Ignora as fotos pesadas por agora)
+document.fonts.ready.then(() => {
+  document.body.classList.add('fonte-pronta');
+});
+
+// 2. REVELAÇÃO DO SITE: O evento 'load' avisa quando as fotos e o resto do site terminaram de baixar
 window.addEventListener('load', () => {
-  document.fonts.ready.then(() => {
-    // 1. A fonte luxuosa chegou! Inicia a animação de respirar.
-    document.body.classList.add('fonte-pronta');
-    
-    // 2. Aguarda 2 segundos para o convidado apreciar o monograma, e depois revela o site.
-    setTimeout(() => {
-      document.body.classList.add('carregado');
-    }, 2000);
-  });
+  // Reduzimos o tempo extra para apenas 0.5s para ser rápido e fluido
+  setTimeout(() => {
+    document.body.classList.add('carregado');
+  }, 500); 
 });
 
 /* ==========================================
