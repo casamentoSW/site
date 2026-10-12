@@ -108,7 +108,7 @@ main { position: relative; z-index: 2; }
 .nomes span { white-space: nowrap; padding: 0 0.6em; }
 
 .subtitulo { margin: 0; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.25em; color: var(--texto); }
-.versiculo { margin: 1.5rem 0; max-width: 38rem; padding: 1.5rem 0; border-top: 1px solid var(--linha); border-bottom: 1px solid var(--linha); }
+.versiculo { margin: 1.5rem 0; max-width: 45rem; padding: 1.5rem 0; border-top: 1px solid var(--linha); border-bottom: 1px solid var(--linha); }
 .versiculo p { margin: 0 0 0.8rem; font-size: 0.85rem; letter-spacing: 0.1em; line-height: 1.8; color: var(--azul-claro); font-style: italic; }
 .versiculo cite { font-style: normal; font-weight: 600; font-size: 0.75rem; letter-spacing: 0.15em; color: var(--tinta); }
 
@@ -214,23 +214,42 @@ main { position: relative; z-index: 2; }
 .card-acao:hover .card-acao-texto span { color: var(--tinta); padding-left: 5px; }
 
 /* ==========================================
-   DRESS CODE E RODAPÉ (QUEBRA DE TEXTO BLOQUEADA)
+   DRESS CODE E RODAPÉ 
 ============================================= */
-/* CORREÇÃO DO FUNDO BRANCO NO ÍCONE DO DRESS CODE */
 .icone-ilustracao { width: 120px; height: auto; object-fit: contain; margin-bottom: 1.5rem; mix-blend-mode: multiply; }
 
-/* PROIBIÇÃO DO "DRESS CODE" QUEBRAR DE LINHA E ESCALA AJUSTADA */
 .script.principal { 
   font-family: var(--font-aniyah); 
   font-size: clamp(2.2rem, 6vw, 5.5rem); 
   line-height: 1; 
-  white-space: nowrap; /* Impede a palavra "Code" de cair */
+  white-space: nowrap; 
   text-align: center;
 }
 
 .etiqueta { margin: -1.5rem 0 2rem; font-size: clamp(0.7rem, 2vw, 0.9rem); font-weight: 600; letter-spacing: 0.3em; text-transform: uppercase; color: var(--tinta); }
 .texto { max-width: 36rem; font-size: clamp(0.8rem, 2.5vw, 0.95rem); line-height: 1.8; margin: 0 auto; color: var(--texto); }
 .texto p { margin-bottom: 1rem; }
+
+/* ESTILO PARA A IMAGEM NA SEÇÃO DRESS CODE */
+.amostra-imagem {
+  margin-top: 2rem;
+  width: 100%;
+  max-width: 750px; /* Limita o tamanho máximo para não ficar gigante no PC */
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(26, 62, 89, 0.08);
+  border: 1px solid var(--linha);
+}
+
+.amostra-imagem .imagem-referencia {
+  width: 100%;
+  height: auto;
+  display: block;
+  background-color: var(--fundo);
+}
+
 .amostra { display: flex; align-items: center; justify-content: center; gap: 0.8rem; font-size: clamp(0.6rem, 1.8vw, 0.75rem); letter-spacing: 0.1em; color: var(--texto); margin-top: 1rem; }
 .amostra .cor { width: 1.5rem; height: 1.5rem; border-radius: 50%; background: var(--azul-claro); }
 
@@ -281,6 +300,8 @@ main { position: relative; z-index: 2; }
   /* Ajuste seguro para a palavra Casamento não vazar de todo */
   .banner-foto { width: calc(100% - 2rem); height: 45vh; min-height: 350px; padding-bottom: 1.5rem; }
   .titulo-foto { font-size: clamp(2px, 1.5vw, 10px); }
+
+  .quebra-desktop { display: none; }
 
   .std-card { flex-direction: column; }
   .std-foto { min-height: 400px; }
